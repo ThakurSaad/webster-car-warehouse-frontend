@@ -2,7 +2,13 @@
 
 ### Live site
 
-teleport to my [Webster Car Warehouse](https://webster-car-warehouse.web.app)
+teleport to [Webster Car Warehouse](https://webster-car-warehouse.web.app)
+
+### technologies
+
+- React js
+- Bootstrap
+- React Router 
 
 ### Hosting
 
