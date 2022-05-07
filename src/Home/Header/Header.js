@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <div>
-      <Navbar bg="light" expand="lg">
+    <div className="text-center">
+      <Navbar bg="dark" expand="lg">
         <Container fluid>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
@@ -14,11 +14,11 @@ const Header = () => {
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
-              <Nav.Link as={Link} to="/">Home</Nav.Link>
-              <Nav.Link as={Link} to="blogs">Blogs</Nav.Link>
+              <Nav.Link className="text-white" as={Link} to="/">Home</Nav.Link>
+              <Nav.Link className="text-white" as={Link} to="blogs">Blogs</Nav.Link>
             </Nav>
             <Nav>
-              <Nav.Link as={Link} to="register">Register</Nav.Link>
+              <Nav.Link className="text-white" as={Link} to="register">Register</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
