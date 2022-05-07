@@ -6,6 +6,7 @@ teleport to [Webster Car Warehouse](https://webster-car-warehouse.web.app)
 
 ### technologies
 
+- firebase
 - React js
 - Bootstrap
 - React Router
