@@ -14,17 +14,17 @@ const Register = () => {
 
   const handleRegister = (event) => {
     event.preventDefault();
-    const name = event.target.name.value;
     const email = event.target.email.value;
     const password = event.target.password.value;
     createUserWithEmailAndPassword(email, password);
     if (userState) {
       toast("Thank you for registration");
+      event.target.reset();
     }
   };
 
   return (
-    <div className="register-form">
+    <div className="register-form container w-50 mx-auto">
       <h2 className="text-center pt-3">Please Register</h2>
       <form onSubmit={handleRegister}>
         <input type="text" name="name" id="" placeholder="Your Name" required />
