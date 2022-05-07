@@ -14,6 +14,11 @@ const Register = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
   const [userState] = useAuthState(auth);
+  let errorElement;
+
+  if (error) {
+    errorElement = <p className="text-danger">Error: {error?.message}</p>;
+  }
 
   const handleRegister = (event) => {
     event.preventDefault();
@@ -48,6 +53,7 @@ const Register = () => {
           value="Register"
         />
       </form>
+      {errorElement}
       <p className="mt-3">
         Already have an account?{" "}
         <Link to="/login" className="text-decoration-none">

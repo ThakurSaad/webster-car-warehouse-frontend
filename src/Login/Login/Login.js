@@ -3,11 +3,13 @@ import React, { useRef } from "react";
 import { Form } from "react-bootstrap";
 import {
   useAuthState,
+  useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
 } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import { toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
+import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Login = () => {
   const emailRef = useRef("");
@@ -15,7 +17,13 @@ const Login = () => {
   const navigate = useNavigate();
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
+  const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
   const [userState] = useAuthState(auth);
+  let errorElement;
+
+  if (error) {
+    errorElement = <p className="text-danger">Error: {error?.message}</p>;
+  }
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -24,8 +32,18 @@ const Login = () => {
     signInWithEmailAndPassword(email, password);
     if (userState) {
       toast("You are now logged in");
+      navigate("/");
     }
-    navigate("/");
+  };
+
+  const resetPassword = async () => {
+    const email = emailRef.current.value;
+    if (email) {
+      await sendPasswordResetEmail(email);
+      toast("Sent email");
+    } else {
+      toast("Please enter your email");
+    }
   };
 
   return (
@@ -57,12 +75,23 @@ const Login = () => {
           value="Login"
         />
       </Form>
-      <p>
+      {errorElement}
+      <p className="my-0">
         New to Genius Car ?{" "}
         <Link to="/register" className="text-decoration-none">
           Please Register
         </Link>
       </p>
+      <p className="my-0">
+        Forget Password ?
+        <button
+          onClick={resetPassword}
+          className="btn btn-link border-0 text-decoration-none"
+        >
+          Reset Password
+        </button>
+      </p>
+      <SocialLogin></SocialLogin>
     </div>
   );
 };
