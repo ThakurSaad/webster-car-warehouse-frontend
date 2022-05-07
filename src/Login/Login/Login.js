@@ -15,10 +15,10 @@ const Login = () => {
   const emailRef = useRef("");
   const passwordRef = useRef("");
   const navigate = useNavigate();
-  const [signInWithEmailAndPassword, user, loading, error] =
+  const [signInWithEmailAndPassword, userEmailPass, loading, error] =
     useSignInWithEmailAndPassword(auth);
   const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
-  const [userState] = useAuthState(auth);
+  const [user] = useAuthState(auth);
   let errorElement;
 
   if (error) {
@@ -30,7 +30,7 @@ const Login = () => {
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
     signInWithEmailAndPassword(email, password);
-    if (userState) {
+    if (user) {
       toast("You are now logged in");
       navigate("/");
     }
@@ -77,9 +77,9 @@ const Login = () => {
       </Form>
       {errorElement}
       <p className="my-0">
-        New to Genius Car ?{" "}
+        New to Webster Warehouse ?{" "}
         <Link to="/register" className="text-decoration-none">
-          Please Register
+          Register
         </Link>
       </p>
       <p className="my-0">

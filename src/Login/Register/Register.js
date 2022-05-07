@@ -11,25 +11,22 @@ import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
   const navigate = useNavigate();
-  const [createUserWithEmailAndPassword, user, loading, error] =
+  const [createUserWithEmailAndPassword, userEmailPass, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
-  const [userState] = useAuthState(auth);
   let errorElement;
 
   if (error) {
     errorElement = <p className="text-danger">Error: {error?.message}</p>;
   }
 
-  const handleRegister = (event) => {
+  const handleRegister = async (event) => {
     event.preventDefault();
     const email = event.target.email.value;
     const password = event.target.password.value;
-    createUserWithEmailAndPassword(email, password);
-    if (userState) {
-      toast("Thank you for registration");
-      event.target.reset();
-      navigate("/home");
-    }
+    await createUserWithEmailAndPassword(email, password);
+    toast("Thank you for registration");
+    event.target.reset();
+    navigate("/home");
   };
 
   return (
