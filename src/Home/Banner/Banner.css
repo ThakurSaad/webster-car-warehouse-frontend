@@ -1,11 +1,12 @@
 .banner-desc {
-  top: 50%;
-  right: 50px;
+  width: 600px;
+  top: 30%;
+  right: 0px;
 }
 .banner-title {
   color: white;
   text-shadow: 0 0 10px black;
-  font-size: 4rem;
+  font-size: 4.5rem;
   font-weight: 900;
 }
 .banner-text {
@@ -14,8 +15,9 @@
 }
 @media only screen and (max-width: 576px) {
   .banner-desc {
-    top: 10px;
-    left: 10px;
+    width: 100%;
+    right: auto;
+    text-align: center;
   }
   .banner-title {
     color: white;
