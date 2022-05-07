@@ -7,7 +7,7 @@ import {
 } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const emailRef = useRef("");
@@ -57,6 +57,12 @@ const Login = () => {
           value="Login"
         />
       </Form>
+      <p>
+        New to Genius Car ?{" "}
+        <Link to="/register" className="text-decoration-none">
+          Please Register
+        </Link>
+      </p>
     </div>
   );
 };

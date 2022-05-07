@@ -6,8 +6,11 @@ import {
   useCreateUserWithEmailAndPassword,
 } from "react-firebase-hooks/auth";
 import { toast } from "react-toastify";
+import SocialLogin from "../SocialLogin/SocialLogin";
+import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
+  const navigate = useNavigate();
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
   const [userState] = useAuthState(auth);
@@ -20,6 +23,7 @@ const Register = () => {
     if (userState) {
       toast("Thank you for registration");
       event.target.reset();
+      navigate("/home");
     }
   };
 
@@ -44,6 +48,13 @@ const Register = () => {
           value="Register"
         />
       </form>
+      <p className="mt-3">
+        Already have an account?{" "}
+        <Link to="/login" className="text-decoration-none">
+          Login
+        </Link>
+      </p>
+      <SocialLogin></SocialLogin>
     </div>
   );
 };
