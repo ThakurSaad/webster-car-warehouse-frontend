@@ -8,6 +8,7 @@ import NotFound from "./NotFound/NotFound";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Login from "./Login/Login/Login";
+import RequireAuth from "./Login/RequireAuth/RequireAuth";
 
 function App() {
   return (
@@ -16,7 +17,14 @@ function App() {
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/home" element={<Home></Home>}></Route>
-        <Route path="/blogs" element={<Blogs></Blogs>}></Route>
+        <Route
+          path="/blogs"
+          element={
+            <RequireAuth>
+              <Blogs></Blogs>
+            </RequireAuth>
+          }
+        ></Route>
         <Route path="/register" element={<Register></Register>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>

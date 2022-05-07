@@ -2,38 +2,44 @@ import "./Login.css";
 import React, { useRef } from "react";
 import { Form } from "react-bootstrap";
 import {
-  useAuthState,
   useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
 } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import { toast } from "react-toastify";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLogin from "../SocialLogin/SocialLogin";
+import Loading from "../../Shared/Loading/Loading";
 
 const Login = () => {
   const emailRef = useRef("");
   const passwordRef = useRef("");
-  const navigate = useNavigate();
-  const [signInWithEmailAndPassword, userEmailPass, loading, error] =
-    useSignInWithEmailAndPassword(auth);
-  const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
-  const [user] = useAuthState(auth);
+  let navigate = useNavigate();
+  let location = useLocation();
+  let from = location.state?.from?.pathname || "/";
   let errorElement;
+
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
+  const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
+
+  if (loading) {
+    return <Loading></Loading>;
+  }
+
+  if (user) {
+  }
 
   if (error) {
     errorElement = <p className="text-danger">Error: {error?.message}</p>;
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
-    signInWithEmailAndPassword(email, password);
-    if (user) {
-      toast("You are now logged in");
-      navigate("/");
-    }
+    await signInWithEmailAndPassword(email, password);
+    navigate(from, { replace: true });
   };
 
   const resetPassword = async () => {
