@@ -2,6 +2,7 @@ import React from "react";
 import "./Inventory.css";
 import useInventory from "../../hooks/useInventory";
 import InventoryDetail from "../InventoryDetail/InventoryDetail";
+import { Button } from "react-bootstrap";
 
 const Inventory = () => {
   const [cars, setCars] = useInventory();
@@ -14,6 +15,13 @@ const Inventory = () => {
           <InventoryDetail car={car} key={car._id}></InventoryDetail>
         ))}
       </div>
+      <Button
+        // onClick={() => handleUpdate(_id)}
+        className="d-block mx-auto mt-3 mb-5"
+        variant="dark"
+      >
+        Manage Inventory
+      </Button>
     </div>
   );
 };
