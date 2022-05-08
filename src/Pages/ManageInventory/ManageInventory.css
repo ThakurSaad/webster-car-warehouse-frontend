@@ -1,0 +1,12 @@
+.manage-Inventory {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-items: center;
+}
+@media only screen and (max-width: 992px) {
+    .manage-Inventory {
+        grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  

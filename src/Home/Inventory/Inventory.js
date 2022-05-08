@@ -3,10 +3,16 @@ import "./Inventory.css";
 import useInventory from "../../hooks/useInventory";
 import InventoryDetail from "../InventoryDetail/InventoryDetail";
 import { Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 const Inventory = () => {
+  const navigate = useNavigate();
   const [cars, setCars] = useInventory();
-  console.log(cars);
+  
+  const handleManageInventory = () => {
+    navigate("/manageinventory")
+  }
+
   return (
     <div className="my-5">
       <h1 className="text-center my-4">Inventory</h1>
@@ -16,11 +22,11 @@ const Inventory = () => {
         ))}
       </div>
       <Button
-        // onClick={() => handleUpdate(_id)}
+        onClick={handleManageInventory}
         className="d-block mx-auto mt-3"
         variant="dark"
       >
-        Manage Inventory
+        Manage Inventories
       </Button>
     </div>
   );

@@ -29,6 +29,9 @@ const UpdateInventoryDetail = () => {
       >
         Deliver
       </Button>
+      <section className="restock">
+        
+      </section>
     </div>
   );
 };

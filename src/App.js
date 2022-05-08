@@ -10,6 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Login from "./Login/Login/Login";
 import RequireAuth from "./Login/RequireAuth/RequireAuth";
 import UpdateInventoryDetail from "./Pages/UpdateInventoryDetail/UpdateInventoryDetail";
+import ManageInventory from "./Pages/ManageInventory/ManageInventory";
 
 function App() {
   return (
@@ -33,6 +34,10 @@ function App() {
               <UpdateInventoryDetail></UpdateInventoryDetail>
             </RequireAuth>
           }
+        ></Route>
+        <Route
+          path="/manageinventory"
+          element={<ManageInventory></ManageInventory>}
         ></Route>
         <Route path="/register" element={<Register></Register>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
