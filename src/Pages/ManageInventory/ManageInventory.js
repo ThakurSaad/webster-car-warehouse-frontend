@@ -2,8 +2,11 @@ import React from "react";
 import "./ManageInventory.css";
 import useInventory from "../../hooks/useInventory";
 import InventoryDetail2 from "../InventoryDetail2/InventoryDetail2";
+import { Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 const ManageInventory = () => {
+  const navigate = useNavigate();
   const [cars, setCars] = useInventory();
 
   return (
@@ -14,6 +17,13 @@ const ManageInventory = () => {
           <InventoryDetail2 car={car} key={car._id}></InventoryDetail2>
         ))}
       </div>
+      <Button
+        onClick={() => navigate('/addnewcar')}
+        className="d-block w-25 mx-auto my-5"
+        variant="dark"
+      >
+        Add New Car
+      </Button>
     </section>
   );
 };
