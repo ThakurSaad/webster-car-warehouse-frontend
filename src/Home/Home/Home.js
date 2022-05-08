@@ -3,6 +3,7 @@ import Banner from "../Banner/Banner";
 import ChooseUs from "../ChooseUs/ChooseUs";
 import Footer from "../Footer/Footer";
 import Inventory from "../Inventory/Inventory";
+import Logistics from "../Logistics/Logistics";
 
 const Home = () => {
   return (
@@ -10,6 +11,7 @@ const Home = () => {
       <Banner></Banner>
       <Inventory></Inventory>
       <ChooseUs></ChooseUs>
+      <Logistics></Logistics>
       <Footer></Footer>
     </div>
   );

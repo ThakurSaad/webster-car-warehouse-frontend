@@ -8,7 +8,7 @@ import icon4 from "../../Images/f4.svg";
 
 const ChooseUs = () => {
   return (
-    <div className="mb-4">
+    <div className="my-5">
       <h2 className="text-center">Why Choose Us?</h2>
       <section className="choose-us row justify-content-center">
         <div className="choose-us-img text-center col-12 col-lg-6">

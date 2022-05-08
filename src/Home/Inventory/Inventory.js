@@ -8,8 +8,8 @@ const Inventory = () => {
   const [cars, setCars] = useInventory();
   console.log(cars);
   return (
-    <div className="my-4">
-      <h1 className="text-center mb-4">Inventory</h1>
+    <div className="my-5">
+      <h1 className="text-center my-4">Inventory</h1>
       <div className="inventory">
         {cars.slice(0,6).map((car) => (
           <InventoryDetail car={car} key={car._id}></InventoryDetail>
