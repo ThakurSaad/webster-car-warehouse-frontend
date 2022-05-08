@@ -1,0 +1,7 @@
+.inventory-detail-2 img {
+    height: 170px;
+}
+.delete-btn:hover {
+    background-color: #B22222;
+    color: white;
+}
