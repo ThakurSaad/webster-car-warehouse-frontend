@@ -28,7 +28,11 @@ function App() {
         ></Route>
         <Route
           path="/updateinventorydetail/:inventoryId"
-          element={<UpdateInventoryDetail></UpdateInventoryDetail>}
+          element={
+            <RequireAuth>
+              <UpdateInventoryDetail></UpdateInventoryDetail>
+            </RequireAuth>
+          }
         ></Route>
         <Route path="/register" element={<Register></Register>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>

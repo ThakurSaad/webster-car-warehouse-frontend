@@ -4,10 +4,6 @@
   background-color: black;
   color: white;
 }
-.inventory-detail:hover {
-  transform: scale(1.1);
-  transition-duration: 0.2s;
-}
 .inventory-detail img {
   width: 300px;
 }
