@@ -29,13 +29,13 @@ const Header = () => {
               {user && (
                 <>
                   <Nav.Link className="text-white" as={Link} to="addservice">
-                    Add
+                    Add Item
                   </Nav.Link>
                   <Nav.Link className="text-white" as={Link} to="manage">
-                    Manage
+                    Manage Item
                   </Nav.Link>
                   <Nav.Link className="text-white" as={Link} to="orders">
-                    Orders
+                    My Item
                   </Nav.Link>
                 </>
               )}
@@ -44,7 +44,7 @@ const Header = () => {
                   onClick={() => signOut(auth)}
                   className="btn btn-outline-white text-white"
                 >
-                  Sign Out
+                  Log Out
                 </button>
               ) : (
                 <>
