@@ -11,6 +11,7 @@ import Login from "./Login/Login/Login";
 import RequireAuth from "./Login/RequireAuth/RequireAuth";
 import UpdateInventoryDetail from "./Pages/UpdateInventoryDetail/UpdateInventoryDetail";
 import ManageInventory from "./Pages/ManageInventory/ManageInventory";
+import AddNewCar from "./Pages/AddNewCar/AddNewCar";
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
           path="/manageinventory"
           element={<ManageInventory></ManageInventory>}
         ></Route>
+        <Route path="/addnewcar" element={<AddNewCar></AddNewCar>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>

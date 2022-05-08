@@ -13,6 +13,7 @@ teleport to [Webster Car Warehouse](https://webster-car-warehouse.web.app)
 - React firebase hooks
 - React Toast
 - Axios
+- React Hook Form
 
 ### Hosting
 
