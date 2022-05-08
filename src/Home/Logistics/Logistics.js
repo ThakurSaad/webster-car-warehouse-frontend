@@ -9,8 +9,8 @@ const Logistics = () => {
       <h1 className="text-center my-4">Logistics</h1>
       <section className="position-relative">
         <div className="logistics-img">
-          <img className="img-fluid d-lg-block d-none" src={blueJeep} alt="" />
-          <img className="img-fluid d-block d-lg-none" src={blueJeep2} alt="" />
+          <img className="img-fluid d-md-block d-none" src={blueJeep} alt="" />
+          <img className="img-fluid d-block d-md-none" src={blueJeep2} alt="" />
         </div>
         <div className="logistic-detail text-white row position-absolute gy-5">
           <div className="col-6 col-lg-3 text-center">
