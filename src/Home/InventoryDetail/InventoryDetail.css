@@ -1,0 +1,17 @@
+.inventory-detail {
+  width: 300px;
+  height: 400px;
+  background-color: black;
+  color: white;
+}
+.inventory-detail:hover {
+  transform: scale(1.1);
+  transition-duration: 0.2s;
+}
+.inventory-detail img {
+  width: 300px;
+}
+.inventory-detail p {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
