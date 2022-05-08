@@ -1,0 +1,74 @@
+[
+    {
+        "name": "BMW",
+        "image": "https://i.ibb.co/Xx2XSFr/car-2.png",
+        "price": 233,
+        "description": "Best service for BMW",
+        "quantity": 11,
+        "supplier": "Josh"
+    },
+    {
+        "name": "Ferrari",
+        "image": "https://i.ibb.co/m5TK294/car-1.png",
+        "price": 212,
+        "description": "Popular packages for BMW",
+        "quantity": 11,
+        "supplier": "Josh"
+    },
+    {
+        "name": "Tesla",
+        "image": "https://i.ibb.co/59fczGt/car-6.png",
+        "price": 263,
+        "description": "Get latest service",
+        "quantity": 8,
+        "supplier": "Josh"
+    },
+    {
+        "name": "Audi",
+        "image": "https://i.ibb.co/2d4kXjZ/car-7.png",
+        "price": 269,
+        "description": "Special service exclusively for Audi",
+        "quantity": 10,
+        "supplier": "Dave"
+    },
+    {
+        "name": "Rolls Royce",
+        "image": "https://i.ibb.co/cb2MqRX/car-8.png",
+        "price": 213,
+        "description": "Full service with extra package",
+        "quantity": 8,
+        "supplier": "Alex"
+    },
+    {
+        "name": "Lamborghini Diablo.",
+        "image": "https://i.ibb.co/nwhhhPY/car-9.png",
+        "price": 253,
+        "description": "Body modification available",
+        "quantity": 6,
+        "supplier": "Alex"
+    },
+    {
+        "name": "Ford Raptor",
+        "image": "https://i.ibb.co/rdV0qwM/car-4.png",
+        "price": 254,
+        "description": "Special offer going on",
+        "quantity": 8,
+        "supplier": "Dave"
+    },
+    {
+        "name": "Lamborghini Huracán",
+        "image": "https://i.ibb.co/bPD32GL/car-3.png",
+        "price": 243,
+        "description": "Dual engine with glass body",
+        "quantity": 10,
+        "supplier": "Dave"
+    },
+    {
+        "name": "Jeep Gladiator",
+        "image": "https://i.ibb.co/DCmT9Ks/car-5.png",
+        "price": 243,
+        "description": "Large space available",
+        "quantity": 10,
+        "supplier": "Josh"
+    }
+]
