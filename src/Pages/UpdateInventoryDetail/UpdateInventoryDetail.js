@@ -12,7 +12,7 @@ const UpdateInventoryDetail = () => {
   let { image, quantity, price, supplier, description, _id } = car;
 
   useEffect(() => {
-    fetch(`http://localhost:5000/inventory/${inventoryId}`)
+    fetch(`https://tranquil-fortress-67244.herokuapp.com/inventory/${inventoryId}`)
       .then((res) => res.json())
       .then((data) => {
         setCar(data);
@@ -29,7 +29,7 @@ const UpdateInventoryDetail = () => {
       toast("Quantity can not be less than 0");
     }
 
-    await fetch(`http://localhost:5000/inventory/${inventoryId}`, {
+    await fetch(`https://tranquil-fortress-67244.herokuapp.com/inventory/${inventoryId}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -50,7 +50,7 @@ const UpdateInventoryDetail = () => {
     console.log(restockQuantity);
     setManageQuantity(parseInt(restockQuantity));
 
-    fetch(`http://localhost:5000/inventory/${inventoryId}`, {
+    fetch(`https://tranquil-fortress-67244.herokuapp.com/inventory/${inventoryId}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

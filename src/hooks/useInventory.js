@@ -4,7 +4,7 @@ const useInventory = () => {
   const [cars, setCars] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/inventory")
+    fetch("https://tranquil-fortress-67244.herokuapp.com/inventory")
       .then((res) => res.json())
       .then((data) => setCars(data));
   }, []);

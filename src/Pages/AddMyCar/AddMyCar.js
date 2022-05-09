@@ -11,7 +11,7 @@ const AddMyCar = () => {
   const [user] = useAuthState(auth);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/inventory/${addmycarsId}`)
+    fetch(`https://tranquil-fortress-67244.herokuapp.com/inventory/${addmycarsId}`)
       .then((res) => res.json())
       .then((data) => setAddMyCar(data));
   }, [addmycarsId]);
@@ -28,7 +28,7 @@ const AddMyCar = () => {
     };
     console.log(myNewCar);
 
-    axios.post("http://localhost:5000/mycars", myNewCar).then((response) => {
+    axios.post("https://tranquil-fortress-67244.herokuapp.com/mycars", myNewCar).then((response) => {
       const { data } = response;
       if (data.insertedId) {
         toast("Your order is booked");

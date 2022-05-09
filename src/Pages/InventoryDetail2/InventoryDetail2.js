@@ -11,7 +11,7 @@ const InventoryDetail2 = ({ car }) => {
 
   const handleDelete = (_id) => {
     console.log(_id);
-    fetch(`http://localhost:5000/inventory/${_id}`, {
+    fetch(`https://tranquil-fortress-67244.herokuapp.com/inventory/${_id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
