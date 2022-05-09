@@ -22,14 +22,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/home" element={<Home></Home>}></Route>
-        <Route
-          path="/blogs"
-          element={
-            <RequireAuth>
-              <Blogs></Blogs>
-            </RequireAuth>
-          }
-        ></Route>
+        <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route
           path="/updateinventorydetail/:inventoryId"
           element={
@@ -40,11 +33,29 @@ function App() {
         ></Route>
         <Route
           path="/manageinventory"
-          element={<ManageInventory></ManageInventory>}
+          element={
+            <RequireAuth>
+              <ManageInventory></ManageInventory>
+            </RequireAuth>
+          }
         ></Route>
         <Route path="/addnewcar" element={<AddNewCar></AddNewCar>}></Route>
-        <Route path="/mycars" element={<MyCars></MyCars>}></Route>
-        <Route path="/addmycars/:addmycarsId" element={<AddMyCar></AddMyCar>}></Route>
+        <Route
+          path="/mycars"
+          element={
+            <RequireAuth>
+              <MyCars></MyCars>
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
+          path="/addmycars/:addmycarsId"
+          element={
+            <RequireAuth>
+              <AddMyCar></AddMyCar>
+            </RequireAuth>
+          }
+        ></Route>
         <Route path="/register" element={<Register></Register>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>

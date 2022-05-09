@@ -26,33 +26,39 @@ const AddNewCar = () => {
           className="bg-light border rounded py-2 ps-2 mb-2"
           placeholder="Name"
           {...register("name")}
+          required
         />
         <input
           className="bg-light border rounded py-2 ps-2 mb-2"
           placeholder="Image Link"
           type="text"
           {...register("image")}
+          required
         />
         <input
           className="bg-light border rounded py-2 ps-2 mb-2"
           placeholder="Price"
           type="number"
           {...register("price")}
+          required
         />
         <textarea
           className="bg-light border rounded py-2 ps-2 mb-2"
           placeholder="Description"
           {...register("description")}
+          required
         />
         <input
           className="bg-light border rounded py-2 ps-2 mb-2"
           placeholder="Quantity"
           {...register("quantity")}
+          required
         />
         <input
           className="bg-light border rounded py-2 ps-2 mb-2"
           placeholder="Supplier"
           {...register("supplier")}
+          required
         />
         <input className="btn btn-dark" type="submit" value="Add Service" />
       </form>
