@@ -33,7 +33,7 @@ const AddMyCar = () => {
       .then((response) => {
         const { data } = response;
         if (data.insertedId) {
-          toast("Your order is booked");
+          toast("Car Added To My Cars");
           event.target.reset();
         }
       });
