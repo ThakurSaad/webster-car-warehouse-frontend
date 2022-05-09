@@ -9,7 +9,7 @@ const Header = () => {
   const [user] = useAuthState(auth);
   return (
     <div className="text-center">
-      <Navbar bg="dark" expand="lg">
+      <Navbar bg="dark" className="navbar-dark" expand="lg">
         <Container fluid>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
