@@ -22,6 +22,7 @@ const UpdateInventoryDetail = () => {
       });
   }, [inventoryId]);
 
+  // This is Deliver button
   const handleUpdate = async (_id) => {
     const currentQuantity = manageQuantity - 1;
     setManageQuantity(currentQuantity);

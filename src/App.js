@@ -5,7 +5,7 @@ import Header from "./Home/Header/Header";
 import Home from "./Home/Home/Home";
 import Register from "./Login/Register/Register";
 import NotFound from "./NotFound/NotFound";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Login from "./Login/Login/Login";
 import RequireAuth from "./Login/RequireAuth/RequireAuth";
