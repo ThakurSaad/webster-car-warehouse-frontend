@@ -51,10 +51,10 @@ const InventoryDetail2 = ({ car }) => {
         <Button
           onClick={() => navigate(`/addmycars/${_id}`)}
           className="mt-3"
-          variant="light"
-          style={{ width: "100px", margin: '0 auto', display: 'block' }}
+          variant="dark"
+          style={{ width: "200px", margin: '0 auto', display: 'block' }}
         >
-          Add Car
+          Add To My Car
         </Button>
     </div>
   );
