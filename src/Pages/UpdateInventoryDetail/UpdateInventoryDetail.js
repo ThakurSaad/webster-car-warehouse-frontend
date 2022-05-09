@@ -23,6 +23,7 @@ const UpdateInventoryDetail = () => {
   const handleUpdate = async (_id) => {
     const currentQuantity = manageQuantity - 1;
     setManageQuantity(currentQuantity);
+    console.log(currentQuantity);
     if (manageQuantity <= 0) {
       setManageQuantity(0);
       toast("Quantity can not be less than 0");
@@ -33,7 +34,7 @@ const UpdateInventoryDetail = () => {
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify({ manageQuantity }),
+      body: JSON.stringify({ manageQuantity: currentQuantity }),
     })
       .then((res) => res.json())
       .then((data) => {
@@ -54,7 +55,7 @@ const UpdateInventoryDetail = () => {
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify({ manageQuantity }),
+      body: JSON.stringify({ manageQuantity: restockQuantity }),
     })
       .then((res) => res.json())
       .then((data) => {
