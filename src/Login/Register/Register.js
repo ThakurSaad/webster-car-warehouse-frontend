@@ -38,7 +38,7 @@ const Register = () => {
   };
 
   return (
-    <div className="form container w-50 mx-auto">
+    <div className="form container mx-auto">
       <h2 className="text-center pt-3">Please Register</h2>
       <form onSubmit={handleRegister}>
         <input type="text" name="name" id="" placeholder="Your Name" required />

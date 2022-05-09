@@ -1,3 +1,6 @@
+.form {
+  width: 50%;
+}
 .form input {
   display: block;
   width: 100%;
@@ -8,4 +11,9 @@
   border-left: none;
   border-right: none;
   border-top: none;
+}
+@media only screen and (max-width: 778px) {
+  .form{
+    width: 90%;
+  }
 }
