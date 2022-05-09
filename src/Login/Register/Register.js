@@ -7,17 +7,25 @@ import {
 } from "react-firebase-hooks/auth";
 import { toast } from "react-toastify";
 import SocialLogin from "../SocialLogin/SocialLogin";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Loading from "../../Shared/Loading/Loading";
 
 const Register = () => {
   const navigate = useNavigate();
-  const [createUserWithEmailAndPassword, userEmailPass, loading, error] =
-    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   let errorElement;
+  let location = useLocation();
+  let from = location.state?.from?.pathname || "/";
+
+  const [createUserWithEmailAndPassword, user, loading, error] =
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
   if (loading) {
     return <Loading></Loading>;
+  }
+
+  if (user) {
+    toast("Verify your email");
+    navigate(from, { replace: true });
   }
 
   if (error) {
@@ -29,9 +37,7 @@ const Register = () => {
     const email = event.target.email.value;
     const password = event.target.password.value;
     await createUserWithEmailAndPassword(email, password);
-    toast("Verify your email");
     event.target.reset();
-    navigate("/home");
   };
 
   return (
