@@ -12,7 +12,9 @@ const UpdateInventoryDetail = () => {
   let { image, quantity, price, supplier, description, _id } = car;
 
   useEffect(() => {
-    fetch(`https://tranquil-fortress-67244.herokuapp.com/inventory/${inventoryId}`)
+    fetch(
+      `https://tranquil-fortress-67244.herokuapp.com/inventory/${inventoryId}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setCar(data);
@@ -29,20 +31,22 @@ const UpdateInventoryDetail = () => {
       toast("Quantity can not be less than 0");
     }
 
-    await fetch(`https://tranquil-fortress-67244.herokuapp.com/inventory/${inventoryId}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({ manageQuantity: currentQuantity }),
-    })
+    await fetch(
+      `https://tranquil-fortress-67244.herokuapp.com/inventory/${inventoryId}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({ manageQuantity: currentQuantity }),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log("success handleUpdate", data);
         toast("Quantity Updated Successfully");
       });
   };
-  console.log(manageQuantity);
 
   const handleRestockForm = (event) => {
     event.preventDefault();
@@ -50,13 +54,16 @@ const UpdateInventoryDetail = () => {
     console.log(restockQuantity);
     setManageQuantity(parseInt(restockQuantity));
 
-    fetch(`https://tranquil-fortress-67244.herokuapp.com/inventory/${inventoryId}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({ manageQuantity: restockQuantity }),
-    })
+    fetch(
+      `https://tranquil-fortress-67244.herokuapp.com/inventory/${inventoryId}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({ manageQuantity: restockQuantity }),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log("success handleRestockForm", data);

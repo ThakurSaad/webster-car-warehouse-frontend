@@ -11,11 +11,12 @@ const AddMyCar = () => {
   const [user] = useAuthState(auth);
 
   useEffect(() => {
-    fetch(`https://tranquil-fortress-67244.herokuapp.com/inventory/${addmycarsId}`)
+    fetch(
+      `https://tranquil-fortress-67244.herokuapp.com/inventory/${addmycarsId}`
+    )
       .then((res) => res.json())
       .then((data) => setAddMyCar(data));
   }, [addmycarsId]);
-  console.log(addMyCar);
 
   const handleAddMyCar = (event) => {
     event.preventDefault();
@@ -26,15 +27,16 @@ const AddMyCar = () => {
       address: event.target.address.value,
       phone: event.target.phone.value,
     };
-    console.log(myNewCar);
 
-    axios.post("https://tranquil-fortress-67244.herokuapp.com/mycars", myNewCar).then((response) => {
-      const { data } = response;
-      if (data.insertedId) {
-        toast("Your order is booked");
-        event.target.reset();
-      }
-    });
+    axios
+      .post("https://tranquil-fortress-67244.herokuapp.com/mycars", myNewCar)
+      .then((response) => {
+        const { data } = response;
+        if (data.insertedId) {
+          toast("Your order is booked");
+          event.target.reset();
+        }
+      });
   };
 
   return (

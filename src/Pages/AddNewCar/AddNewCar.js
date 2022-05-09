@@ -1,12 +1,12 @@
 import React from "react";
 import "./AddNewCar.css";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 
 const AddNewCar = () => {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
     fetch(`https://tranquil-fortress-67244.herokuapp.com/inventory`, {
       method: "POST",
       headers: {
@@ -15,7 +15,10 @@ const AddNewCar = () => {
       body: JSON.stringify(data),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        console.log(data);
+        toast("New Car Added Successfully To Inventory");
+      });
   };
 
   return (

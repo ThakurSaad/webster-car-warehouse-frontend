@@ -14,7 +14,6 @@ const ManageInventory = () => {
     fetch(`https://tranquil-fortress-67244.herokuapp.com/inventory`)
       .then((res) => res.json())
       .then((data) => {
-        console.log("from manage inventory");
         setCars(data);
       });
     // setCount(count + 1);

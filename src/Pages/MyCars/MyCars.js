@@ -15,20 +15,19 @@ const MyCars = () => {
       .then((res) => res.json())
       .then((data) => setMyCars(data));
   }, [user]);
-  console.log(myCars);
 
   const handleDelete = (_id) => {
-    console.log(_id);
-    fetch(`https://tranquil-fortress-67244.herokuapp.com/myCars/${_id}`, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        const remaining = myCars.filter((car) => car._id !== _id);
-        console.log(data, remaining);
-        setMyCars(remaining);
-        toast("Successfully deleted from your cars collection")
-      });
+    if (window.confirm("Do You Want To Delete")) {
+      fetch(`https://tranquil-fortress-67244.herokuapp.com/myCars/${_id}`, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          const remaining = myCars.filter((car) => car._id !== _id);
+          setMyCars(remaining);
+          toast("Successfully deleted from your cars collection");
+        });
+    }
   };
 
   return (
