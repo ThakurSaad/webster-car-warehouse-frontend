@@ -39,7 +39,9 @@ const AddMyCar = () => {
 
   return (
     <div className="form w-50 mx-auto my-5">
-      <h2 className="text-center my-4" >Add To Your Cars Here : {addMyCar.name}</h2>
+      <h2 className="text-center my-4">
+        Add To Your Cars Here : {addMyCar.name}
+      </h2>
       <form onSubmit={handleAddMyCar}>
         <input
           value={user?.displayName}

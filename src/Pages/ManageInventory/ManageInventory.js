@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./ManageInventory.css";
 import useInventory from "../../hooks/useInventory";
 import InventoryDetail2 from "../InventoryDetail2/InventoryDetail2";
@@ -8,15 +8,18 @@ import { useNavigate } from "react-router-dom";
 const ManageInventory = () => {
   const navigate = useNavigate();
   const [cars, setCars] = useInventory();
+  // const [count, setCount] = useState(0);
 
-//   useEffect(() => {
-//     fetch(`http://localhost:5000/inventory`)
-//       .then((res) => res.json())
-//       .then((data) => {
-//         console.log("from manage inventory");
-//         setCars(data);
-//       });
-//   }, []);
+  useEffect(() => {
+    fetch(`http://localhost:5000/inventory`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("from manage inventory");
+        setCars(data);
+      });
+    // setCount(count + 1);
+    // console.log(count);
+  }, []);
 
   return (
     <section>

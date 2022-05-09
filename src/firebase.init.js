@@ -5,6 +5,8 @@ import { getAuth } from "firebase/auth";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+// console.log(process.env);
+
 const firebaseConfig = {
   apiKey:"AIzaSyDUuyE4H2WIP05xudvf5B2-DSnqzRpMXQI",
   authDomain:"webster-car-warehouse.firebaseapp.com",
