@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 const Inventory = () => {
   const navigate = useNavigate();
-  const [cars, setCars] = useInventory();
+  const [cars] = useInventory();
 
   const handleManageInventory = () => {
     navigate("/manageinventory");

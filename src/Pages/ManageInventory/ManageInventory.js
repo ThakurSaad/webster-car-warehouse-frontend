@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./ManageInventory.css";
 import useInventory from "../../hooks/useInventory";
 import InventoryDetail2 from "../InventoryDetail2/InventoryDetail2";
@@ -8,7 +8,6 @@ import { useNavigate } from "react-router-dom";
 const ManageInventory = () => {
   const navigate = useNavigate();
   const [cars, setCars] = useInventory();
-  // const [count, setCount] = useState(0);
 
   useEffect(() => {
     fetch(`https://tranquil-fortress-67244.herokuapp.com/inventory`)
@@ -16,8 +15,6 @@ const ManageInventory = () => {
       .then((data) => {
         setCars(data);
       });
-    // setCount(count + 1);
-    // console.log(count);
   }, []);
 
   return (

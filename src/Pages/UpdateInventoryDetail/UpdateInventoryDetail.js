@@ -9,7 +9,7 @@ const UpdateInventoryDetail = () => {
   const navigate = useNavigate();
   const [car, setCar] = useState({});
   const [manageQuantity, setManageQuantity] = useState(0);
-  let { image, quantity, price, supplier, description, _id } = car;
+  let { image, price, supplier, description, _id } = car;
 
   useEffect(() => {
     fetch(

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./InventoryDetail2.css";
 import { Button } from "react-bootstrap";
 import useInventory from "../../hooks/useInventory";

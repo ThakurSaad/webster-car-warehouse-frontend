@@ -10,7 +10,7 @@ const SocialLogin = () => {
   let from = location.state?.from?.pathname || "/";
   let errorElement;
 
-  const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+  const [signInWithGoogle, user, error] = useSignInWithGoogle(auth);
 
   if (error) {
     errorElement = <p className="text-danger">Error: {error?.message}</p>;

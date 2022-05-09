@@ -31,7 +31,11 @@ const Header = () => {
                   <Nav.Link className="text-white" as={Link} to="addnewcar">
                     Add New Car
                   </Nav.Link>
-                  <Nav.Link className="text-white" as={Link} to="manageinventory">
+                  <Nav.Link
+                    className="text-white"
+                    as={Link}
+                    to="manageinventory"
+                  >
                     Manage Cars
                   </Nav.Link>
                   <Nav.Link className="text-white" as={Link} to="mycars">
