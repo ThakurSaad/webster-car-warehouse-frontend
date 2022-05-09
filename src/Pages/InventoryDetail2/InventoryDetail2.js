@@ -28,7 +28,7 @@ const InventoryDetail2 = ({ car }) => {
     <div className="inventory-detail inventory-detail-2 rounded">
       <img className="rounded img-fluid" src={image} alt="" />
       <div className="inventory-detail-desc ms-1">
-        <h3>{car.name}</h3>
+        <h3 className="mt-1">{car.name}</h3>
         <p>Quantity : {quantity}</p>
         <p>Price : {price}</p>
         <p>Supplier : {supplier}</p>
