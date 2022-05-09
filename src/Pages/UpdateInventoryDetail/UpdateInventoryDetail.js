@@ -20,23 +20,24 @@ const UpdateInventoryDetail = () => {
       });
   }, [inventoryId]);
 
-  const handleUpdate = (_id) => {
-    const currentQuantity = parseInt(manageQuantity) - 1;
+  const handleUpdate = async (_id) => {
+    const currentQuantity = manageQuantity - 1;
     setManageQuantity(currentQuantity);
     if (manageQuantity <= 0) {
       setManageQuantity(0);
       toast("Quantity can not be less than 0");
     }
-    fetch(`http://localhost:5000/inventory/${inventoryId}`, {
+
+    await fetch(`http://localhost:5000/inventory/${inventoryId}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(manageQuantity),
+      body: JSON.stringify({ manageQuantity }),
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log("success", data);
+        console.log("success handleUpdate", data);
         toast("Quantity Updated Successfully");
       });
   };
@@ -46,18 +47,18 @@ const UpdateInventoryDetail = () => {
     event.preventDefault();
     const restockQuantity = event.target.restock.value;
     console.log(restockQuantity);
-    setManageQuantity(restockQuantity);
+    setManageQuantity(parseInt(restockQuantity));
 
     fetch(`http://localhost:5000/inventory/${inventoryId}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(manageQuantity),
+      body: JSON.stringify({ manageQuantity }),
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log("success", data);
+        console.log("success handleRestockForm", data);
         toast("Quantity Updated Successfully");
       });
   };

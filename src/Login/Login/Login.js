@@ -28,9 +28,11 @@ const Login = () => {
   }
 
   if (user) {
+    navigate(from, { replace: true });
   }
 
   if (error) {
+    console.log(error?.message);
     errorElement = <p className="text-danger">Error: {error?.message}</p>;
   }
 
@@ -39,7 +41,7 @@ const Login = () => {
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
     await signInWithEmailAndPassword(email, password);
-    navigate(from, { replace: true });
+    // navigate(from, { replace: true });
   };
 
   const resetPassword = async () => {

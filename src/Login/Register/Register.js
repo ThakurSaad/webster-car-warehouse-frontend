@@ -8,12 +8,17 @@ import {
 import { toast } from "react-toastify";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import { Link, useNavigate } from "react-router-dom";
+import Loading from "../../Shared/Loading/Loading";
 
 const Register = () => {
   const navigate = useNavigate();
   const [createUserWithEmailAndPassword, userEmailPass, loading, error] =
-    useCreateUserWithEmailAndPassword(auth);
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   let errorElement;
+
+  if (loading) {
+    return <Loading></Loading>;
+  }
 
   if (error) {
     errorElement = <p className="text-danger">Error: {error?.message}</p>;
@@ -24,7 +29,7 @@ const Register = () => {
     const email = event.target.email.value;
     const password = event.target.password.value;
     await createUserWithEmailAndPassword(email, password);
-    toast("Thank you for registration");
+    toast("Verify your email");
     event.target.reset();
     navigate("/home");
   };
