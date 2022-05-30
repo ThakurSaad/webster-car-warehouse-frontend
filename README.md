@@ -31,5 +31,5 @@ This is a warehouse website. It is for cars. It is a type of warehouse where peo
 
 ### Hosting
 
-- Image hosted on Imagebb
+- Image hosted on ImageBB
 - Hosted on google powered firebase
